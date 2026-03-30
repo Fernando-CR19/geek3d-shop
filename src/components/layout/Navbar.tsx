@@ -9,7 +9,7 @@ export default function Navbar() {
       }}
       className="sticky top-0 z-50 w-full"
     >
-      <div className="max-w-6x1 mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
         <span
           className="neon-text text-xl font-black tracking-widest uppercase"
           style={{ fontFamily: "var(--font-orbitron)" }}
@@ -40,6 +40,7 @@ export default function Navbar() {
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
+          className="whitespace-nowrap"
           style={{
             border: "2px solid var(--accent-cyan)",
             color: "var(--accent-cyan)",
