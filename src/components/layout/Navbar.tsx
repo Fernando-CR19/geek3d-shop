@@ -1,4 +1,4 @@
-import { WHATSAPP_URL } from "@/utils/constantes";
+import { WHATSAPP_URL } from "@/utils/constants";
 
 export default function Navbar() {
   return (
