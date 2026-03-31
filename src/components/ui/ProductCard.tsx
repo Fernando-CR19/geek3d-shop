@@ -65,7 +65,7 @@ export default function ProductCard({ product }: ProductProps) {
           href={`${WHATSAPP_URL}?text=Olá! Tenho interesse no ${product.name}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="whitespace-nowrap text-center"
+          className="text-center w-full block"
           style={{
             border: "2px solid var(--accent-cyan)",
             color: "var(--accent-cyan)",
