@@ -1,5 +1,6 @@
 import { Product } from "@/data/Products";
 import { WHATSAPP_URL } from "@/utils/constants";
+import Link from "next/link";
 
 interface ProductProps {
   product: Product;
@@ -8,59 +9,62 @@ interface ProductProps {
 export default function ProductCard({ product }: ProductProps) {
   return (
     <div
-      className="pixel-border overflow-hidden"
+      className="pixel-border overflow-hidden flex flex-col"
       style={{ backgroundColor: "var(--bg-secondary)", transition: "all 0.2s" }}
     >
-      <div
-        className="w-full aspect-square flex items-center justify-center"
-        style={{ backgroundColor: "var(--bg-primary)" }}
-      >
-        {product.image ? (
-          <img
-            src={product.image}
-            alt={product.name}
-            className="w-full h-full object-cover"
-          />
-        ) : (
+      <Link href={`/produto/${product.id}`} className="flex flex-col flex-1">
+        <div
+          className="w-full aspect-square flex items-center justify-center"
+          style={{ backgroundColor: "var(--bg-primary)" }}
+        >
+          {product.image ? (
+            <img
+              src={product.image}
+              alt={product.name}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <span
+              style={{
+                color: "var(--accent-cyan)",
+                opacity: 0.3,
+                fontSize: "3rem",
+              }}
+            >
+              ▣
+            </span>
+          )}
+        </div>
+
+        <div className="p-4 flex flex-col gap-2">
           <span
+            className="text-xs uppercase tracking-wider"
             style={{
-              color: "var(--accent-cyan)",
-              opacity: 0.3,
-              fontSize: "3rem",
+              color: "var(--text-muted)",
+              fontFamily: "var(--font-orbitron)",
             }}
           >
-            ▣
+            {product.category}
           </span>
-        )}
-      </div>
+          <h3
+            className="font-semibold text-sm"
+            style={{
+              color: "var(--text-primary)",
+              fontFamily: "var(--font-exo2)",
+            }}
+          >
+            {product.name}
+          </h3>
+          <span
+            className="neon-text font-bold"
+            style={{ fontFamily: "var(--font-orbitron)" }}
+          >
+            R$ {product.price.toFixed(2).replace(".", ",")}
+          </span>
+        </div>
+      </Link>
 
-      <div className="p-4 flex flex-col gap-2">
-        <span
-          className="text-xs uppercase tracking-wider"
-          style={{
-            color: "var(--text-muted)",
-            fontFamily: "var(--font-orbitron)",
-          }}
-        >
-          {product.category}
-        </span>
-        <h3
-          className="font-semibold text-sm"
-          style={{
-            color: "var(--text-primary)",
-            fontFamily: "var(--font-exo2)",
-          }}
-        >
-          {product.name}
-        </h3>
-
-        <span
-          className="neon-text font-bold"
-          style={{ fontFamily: "var(--font-orbitron)" }}
-        >
-          R$ {product.price.toFixed(2).replace(".", ",")}
-        </span>
-
+      <div className="px-4 pb-4">
         <a
           href={`${WHATSAPP_URL}?text=Olá! Tenho interesse no ${product.name}`}
           target="_blank"
