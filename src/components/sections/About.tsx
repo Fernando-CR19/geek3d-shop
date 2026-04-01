@@ -19,26 +19,12 @@ export default function About() {
             lineHeight: "1.8",
           }}
         >
-          Olá! Me chamo Fernando, sou desenvolvedor fullstack e sou apaixonado
-          pela cultura geek. Este site foi criado como parte do meu portfólio de
-          desenvolvimento e também para marcar minha entrada no mercado de
-          impressão 3D.
-        </p>
-
-        <p
-          className="text-justify"
-          style={{
-            color: "var(--text-secondary)",
-            fontFamily: "var(--font-exo2)",
-            lineHeight: "1.8",
-          }}
-        >
-          A Geek3D Shop nasceu da união de duas paixões: tecnologia e cultura
-          pop. Aqui você encontra bonecos e colecionáveis geek impressos em 3D
+          Olá! Me chamo Fernando e sou apaixonado por cultura geek e impressão
+          3D. Aqui você encontra bonecos e colecionáveis geek impressos em 3D
           com alta precisão, usando filamentos de qualidade e muito carinho.
           Aceitamos encomendas personalizadas, seja do seu herói favorito,
-          personagem de anime, game ou filme. Se tiver alguma ideia em mente,
-          manda mensagem, vamos criar junto!
+          personagem de anime, game ou filme. Se tiver algum projeto em mente,
+          manda mensagem, vamos transformar sua ideia em realidade juntos!
         </p>
 
         <a
