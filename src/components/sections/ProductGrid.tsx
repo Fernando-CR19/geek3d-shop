@@ -1,5 +1,6 @@
 import { products } from "@/data/Products";
 import ProductCard from "../ui/ProductCard";
+import Link from "next/link";
 
 export default function ProductGrid() {
   const featuredProducts = products.filter((p) => p.featured);
@@ -18,6 +19,24 @@ export default function ProductGrid() {
           {featuredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
+        </div>
+
+        <div className="flex justify-center mt-12">
+          <Link
+            href="/catalogo"
+            style={{
+              border: "2px solid var(--accent-cyan)",
+              color: "var(--accent-cyan)",
+              fontFamily: "var(--font-orbitron)",
+              fontSize: "0.875rem",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              padding: "0.75rem 2rem",
+              boxShadow: "var(--neon-glow)",
+            }}
+          >
+            Ver Todos os Produtos
+          </Link>
         </div>
       </div>
     </section>
