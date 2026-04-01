@@ -43,7 +43,7 @@ export default function Hero() {
 
         <div className="flex flex-col sm:flex-row gap-4 mt-4">
           <a
-            href="#catalogo"
+            href="/catalogo"
             style={{
               border: "2px solid var(--accent-cyan)",
               color: "var(--accent-cyan)",
