@@ -2,7 +2,7 @@ import { WHATSAPP_URL } from "@/utils/constants";
 
 export default function About() {
   return (
-    <section className="py-20 px-6">
+    <section id="sobre" className="py-20 px-6">
       <div className="max-w-2xl mx-auto text-center flex flex-col gap-6">
         <h2
           className="text-2xl font-bold uppercase tracking-widest neon-text"

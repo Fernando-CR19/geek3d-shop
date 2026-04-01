@@ -1,4 +1,12 @@
 import { WHATSAPP_URL } from "@/utils/constants";
+import Link from "next/link";
+
+const navLinks = [
+  { label: "Início", href: "/" },
+  { label: "Catálogo", href: "/catalogo" },
+  { label: "Sobre", href: "/#sobre" },
+  { label: "Contato", href: WHATSAPP_URL },
+];
 
 export default function Navbar() {
   return (
@@ -10,18 +18,22 @@ export default function Navbar() {
       className="sticky top-0 z-50 w-full"
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
-        <span
-          className="neon-text text-xl font-black tracking-widest uppercase"
-          style={{ fontFamily: "var(--font-orbitron)" }}
-        >
-          Geek3D<span style={{ color: "var(--text-secondary)" }}>Shop</span>
-        </span>
+        <Link href={"/"}>
+          <span
+            className="neon-text text-xl font-black tracking-widest uppercase"
+            style={{ fontFamily: "var(--font-orbitron)" }}
+          >
+            Geek3D<span style={{ color: "var(--text-secondary)" }}>Shop</span>
+          </span>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-8 px-6 py-4">
-          {["Início", "Catálogo", "Sobre", "Contato"].map((item) => (
+          {navLinks.map((item) => (
             <a
-              key={item}
-              href="#"
+              key={item.label}
+              href={item.href}
+              target={item.label === "Contato" ? "_blank" : undefined}
+              rel={item.label === "Contato" ? "noopener noreferrer" : undefined}
               style={{
                 color: "var(--text-secondary)",
                 fontFamily: "var(--font-exo2)",
@@ -31,7 +43,7 @@ export default function Navbar() {
                 transition: "color 0.2s",
               }}
             >
-              {item}
+              {item.label}
             </a>
           ))}
         </nav>

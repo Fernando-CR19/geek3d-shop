@@ -8,6 +8,7 @@ export type Product = {
   description: string;
   dimensions: string;
   modelAuthor?: string;
+  featured?: boolean;
 };
 
 export const products: Product[] = [
@@ -20,6 +21,7 @@ export const products: Product[] = [
     images: [],
     description: "Boneco do Homem-Aranha impresso em 3D com alta precisão.",
     dimensions: "15cm x 8cm x 6cm",
+    featured: true,
   },
   {
     id: 2,
@@ -30,6 +32,7 @@ export const products: Product[] = [
     images: [],
     description: "Boneco do Batman impresso em 3D com alta precisão.",
     dimensions: "16cm x 8cm x 6cm",
+    featured: true,
   },
   {
     id: 3,
@@ -40,6 +43,7 @@ export const products: Product[] = [
     images: [],
     description: "Boneco do Goku impresso em 3D com alta precisão.",
     dimensions: "17cm x 8cm x 6cm",
+    featured: true,
   },
   {
     id: 4,
@@ -50,6 +54,7 @@ export const products: Product[] = [
     images: [],
     description: "Boneco do Master Chief impresso em 3D com alta precisão.",
     dimensions: "18cm x 9cm x 7cm",
+    featured: true,
   },
   {
     id: 5,
@@ -60,5 +65,6 @@ export const products: Product[] = [
     images: [],
     description: "Boneco do Sherlock Holmes impresso em 3D com alta precisão.",
     dimensions: "15cm x 7cm x 6cm",
+    featured: true,
   },
 ];
