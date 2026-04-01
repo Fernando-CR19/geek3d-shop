@@ -5,7 +5,7 @@ import Footer from "@/components/layout/Footer";
 import ProductCard from "@/components/ui/ProductCard";
 import { products } from "@/data/Products";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 
 const categories = [
   "Todos",
@@ -20,13 +20,24 @@ const categories = [
 export default function CatalogPage() {
   const [activeCategory, setActiveCategory] = useState("Todos");
   const searchParams = useSearchParams();
+  const router = useRouter();
 
   useEffect(() => {
     const categoria = searchParams.get("categoria");
     if (categoria && categories.includes(categoria)) {
       setActiveCategory(categoria);
+    } else {
+      setActiveCategory("Todos");
     }
-  });
+  }, [searchParams]);
+
+  const handleCategoryChange = (categorie: string) => {
+    if (categorie === "Todos") {
+      router.push("/catalogo");
+    } else {
+      router.push(`/catalogo?categoria=${encodeURIComponent(categorie)}`);
+    }
+  };
 
   const filtered =
     activeCategory === "Todos"
@@ -47,15 +58,15 @@ export default function CatalogPage() {
           </h1>
 
           <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {categories.map((cat) => (
+            {categories.map((categorie) => (
               <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
+                key={categorie}
+                onClick={() => handleCategoryChange(categorie)}
                 className="whitespace-nowrap"
                 style={{
-                  border: `2px solid ${activeCategory === cat ? "var(--accent-cyan)" : "var(--border-color)"}`,
+                  border: `2px solid ${activeCategory === categorie ? "var(--accent-cyan)" : "var(--border-color)"}`,
                   color:
-                    activeCategory === cat
+                    activeCategory === categorie
                       ? "var(--accent-cyan)"
                       : "var(--text-secondary)",
                   fontFamily: "var(--font-orbitron)",
@@ -64,13 +75,13 @@ export default function CatalogPage() {
                   textTransform: "uppercase",
                   padding: "0.4rem 1rem",
                   boxShadow:
-                    activeCategory === cat ? "var(--neon-glow)" : "none",
+                    activeCategory === categorie ? "var(--neon-glow)" : "none",
                   backgroundColor: "transparent",
                   cursor: "pointer",
                   transition: "all 0.2s",
                 }}
               >
-                {cat}
+                {categorie}
               </button>
             ))}
           </div>

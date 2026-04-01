@@ -20,7 +20,8 @@ export const metadata: Metadata = {
     "Bonecos e colecionáveis geek impressos em 3D. Marvel, DC, Anime, Games e muito mais. Feitos sob encomenda.",
   openGraph: {
     title: "Geek3D Shop",
-    description: "Bonecos geek impressos em 3D — colecionáveis únicos feitos sob encomenda.",
+    description:
+      "Bonecos geek impressos em 3D — colecionáveis únicos feitos sob encomenda.",
     type: "website",
   },
 };
@@ -34,6 +35,7 @@ export default function RootLayout({
     <html
       lang="pt-BR"
       className={`${orbitron.variable} ${exo2.variable} h-full`}
+      data-scroll-behavior="smooth"
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
