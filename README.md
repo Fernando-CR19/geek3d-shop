@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Geek3D Shop 🎮
 
-## Getting Started
+Vitrine estática de bonecos e colecionáveis geek impressos em 3D, desenvolvida com Next.js, TypeScript e Tailwind CSS.
 
-First, run the development server:
+## 🔗 Acesse o site
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+> Em breve
+
+## 🖼️ Sobre o projeto
+
+A Geek3D Shop é uma loja virtual de bonecos geek impressos em 3D. O projeto nasceu da união de duas paixões: tecnologia e cultura pop. O site permite que os clientes visualizem os produtos disponíveis, filtrem por categoria e entrem em contato via WhatsApp para fazer pedidos.
+
+O projeto também faz parte do meu portfólio de desenvolvimento, demonstrando habilidades com as tecnologias mais utilizadas no mercado.
+
+## 🚀 Tecnologias
+
+- [Next.js 16](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+## ✨ Funcionalidades
+
+- Vitrine de produtos com página de detalhes
+- Filtro por categoria no catálogo
+- Navegação por categorias direto da home
+- Botão de contato via WhatsApp em cada produto
+- Design responsivo (mobile-first)
+- Estética Retro Digital com pixel art e neon cyan
+
+## 📁 Estrutura do projeto
+
+```
+src/
+├── app/              # Rotas e páginas (App Router)
+├── components/
+│   ├── layout/       # Navbar e Footer
+│   ├── sections/     # Seções da home (Hero, CategoryGrid, ProductGrid, About)
+│   └── ui/           # Componentes reutilizáveis (ProductCard)
+├── data/             # Dados estáticos dos produtos
+├── types/            # Tipos TypeScript
+└── utils/            # Funções utilitárias e constantes
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Como rodar localmente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/geek3d-shop.git
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Entre na pasta
+cd geek3d-shop
 
-## Learn More
+# Instale as dependências
+npm install
 
-To learn more about Next.js, take a look at the following resources:
+# Rode o servidor de desenvolvimento
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Acesse `http://localhost:3000` no navegador.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 👤 Autor
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Desenvolvido por **Fernando Chaves**
