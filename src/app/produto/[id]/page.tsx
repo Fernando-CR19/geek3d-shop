@@ -2,6 +2,8 @@ import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import { products } from "@/data/Products";
 import { WHATSAPP_URL } from "@/utils/constants";
+import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 interface ProductPageProps {
@@ -22,7 +24,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       <main className="flex-1 py-16 px-6">
         <div className="max-w-4xl mx-auto mb-8">
-          <a
+          <Link
             href="/"
             style={{
               color: "var(--accent-cyan)",
@@ -33,20 +35,21 @@ export default async function ProductPage({ params }: ProductPageProps) {
             }}
           >
             Voltar
-          </a>
+          </Link>
         </div>
 
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-12">
           <div className="flex flex-col gap-4 md:w-1/2">
             <div
-              className="w-full aspect-square flex items-center justify-center pixel-border"
+              className="w-full aspect-square flex items-center justify-center pixel-border relative"
               style={{ backgroundColor: "var(--bg-secondary)" }}
             >
               {product.image ? (
-                <img
+                <Image
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               ) : (
                 <span
@@ -66,13 +69,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 {product.images.map((img, index) => (
                   <div
                     key={index}
-                    className="aspect-square pixel-border overflow-hidden"
+                    className="aspect-square pixel-border overflow-hidden relative"
                     style={{ backgroundColor: "var(--bg-secondary)" }}
                   >
-                    <img
+                    <Image
                       src={img}
                       alt={`${product.name} ${index + 1}`}
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                 ))}

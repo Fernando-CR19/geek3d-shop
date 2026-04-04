@@ -4,7 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ProductCard from "@/components/ui/ProductCard";
 import { products } from "@/data/Products";
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 
 const categories = [
@@ -18,17 +18,15 @@ const categories = [
 ];
 
 export default function CatalogPage() {
-  const [activeCategory, setActiveCategory] = useState("Todos");
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  useEffect(() => {
+  const activeCategory = useMemo(() => {
     const categoria = searchParams.get("categoria");
     if (categoria && categories.includes(categoria)) {
-      setActiveCategory(categoria);
-    } else {
-      setActiveCategory("Todos");
+      return categoria;
     }
+    return "Todos";
   }, [searchParams]);
 
   const handleCategoryChange = (categorie: string) => {
