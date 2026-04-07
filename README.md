@@ -4,7 +4,7 @@ Vitrine estática de bonecos e colecionáveis geek impressos em 3D, desenvolvida
 
 ## 🔗 Acesse o site
 
-> Em breve
+geek3d-shop.vercel.app
 
 ## 🖼️ Sobre o projeto
 
