@@ -19,12 +19,24 @@ export default function About() {
             lineHeight: "1.8",
           }}
         >
-          Olá! Me chamo Fernando e sou apaixonado por cultura geek e impressão
-          3D. Aqui você encontra bonecos e colecionáveis geek impressos em 3D
-          com alta precisão, usando filamentos de qualidade e muito carinho.
-          Aceitamos encomendas personalizadas, seja do seu herói favorito,
-          personagem de anime, game ou filme. Se tiver algum projeto em mente,
-          manda mensagem, vamos transformar sua ideia em realidade juntos!
+          Olá! Me chamo Fernando e sou apaixonado por cultura geek. Estou
+          iniciando minha jornada na impressão 3D para transformar essa paixão
+          em colecionáveis. Cada peça será produzida com precisão, qualidade no
+          acabamento e muito carinho.
+        </p>
+
+        <p
+          className="text-justify"
+          style={{
+            color: "var(--text-secondary)",
+            fontFamily: "var(--font-exo2)",
+            lineHeight: "1.8",
+          }}
+        >
+          Em breve novidades chegam por aqui, mas desde já aceito encomendas
+          personalizadas: seu herói favorito, personagem de anime, game ou
+          filme. Se tiver um projeto em mente, manda mensagem e vamos
+          transformar sua ideia em realidade juntos!
         </p>
 
         <a
